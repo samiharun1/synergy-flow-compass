@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				synergy: {
+					primary: '#4361EE',
+					secondary: '#3F83F8',
+					accent: '#7DCFB6',
+					muted: '#F1F5F9',
+					light: '#F8FAFC',
+					dark: '#1E293B',
+					success: '#10B981',
+					warning: '#FBBF24',
+					danger: '#EF4444',
+					"ongoing": '#3B82F6',   // Blue for ongoing tasks
+					"paused": '#F59E0B',    // Amber for paused tasks
+					"completed": '#10B981', // Green for completed tasks
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
