@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,7 +13,9 @@ import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Landing from "./pages/Landing";
 import { useState } from "react";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -31,12 +34,15 @@ const App = () => {
         <BrowserRouter>
           {!isLoggedIn ? (
             <Routes>
-              <Route path="*" element={<Login onLogin={handleLogin} />} />
+              <Route path="/" element={<Landing />} />
+              <Route path="/login" element={<Login onLogin={handleLogin} />} />
+              <Route path="*" element={<Landing />} />
             </Routes>
           ) : (
             <MainLayout>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Index />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/goals" element={<Goals />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/team" element={<Team />} />
