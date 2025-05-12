@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Smile, Meh, Frown, Calendar, Target, Users, Clock } from "lucide-react";
+import "./Dashboard.css";
 
 type MoodType = "happy" | "neutral" | "sad" | null;
 
@@ -22,18 +22,18 @@ const Dashboard = () => {
   });
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+    <div className="dashboard-container">
+      <div className="dashboard-header">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-          <p className="text-gray-500">{formattedDate}</p>
+          <h1 className="dashboard-title">Dashboard</h1>
+          <p className="dashboard-date">{formattedDate}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="dashboard-actions">
           <Button className="bg-synergy-primary">Add Task</Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="dashboard-grid">
         {/* Daily Check-in Card */}
         <Card>
           <CardHeader>
@@ -42,37 +42,37 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent>
             {mood === null ? (
-              <div className="space-y-4">
-                <div className="flex justify-center gap-4">
+              <div className="mood-container">
+                <div className="mood-options">
                   <button 
                     onClick={() => setMood("happy")}
-                    className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-synergy-muted p-4 hover:bg-green-100"
+                    className="mood-button happy"
                   >
-                    <Smile className="h-8 w-8 text-green-500" />
+                    <Smile className="mood-icon happy" />
                   </button>
                   <button 
                     onClick={() => setMood("neutral")}
-                    className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-synergy-muted p-4 hover:bg-yellow-100"
+                    className="mood-button neutral"
                   >
-                    <Meh className="h-8 w-8 text-yellow-500" />
+                    <Meh className="mood-icon neutral" />
                   </button>
                   <button 
                     onClick={() => setMood("sad")}
-                    className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-synergy-muted p-4 hover:bg-red-100"
+                    className="mood-button sad"
                   >
-                    <Frown className="h-8 w-8 text-red-500" />
+                    <Frown className="mood-icon sad" />
                   </button>
                 </div>
-                <div className="text-center text-sm text-gray-500">
+                <div className="anonymous-text">
                   Your response can remain anonymous
                 </div>
               </div>
             ) : (
-              <div className="space-y-4">
-                <div className="flex justify-center">
-                  {mood === "happy" && <Smile className="h-12 w-12 text-green-500" />}
-                  {mood === "neutral" && <Meh className="h-12 w-12 text-yellow-500" />}
-                  {mood === "sad" && <Frown className="h-12 w-12 text-red-500" />}
+              <div className="mood-response">
+                <div className="mood-selected">
+                  {mood === "happy" && <Smile className="mood-selected-icon happy" />}
+                  {mood === "neutral" && <Meh className="mood-selected-icon neutral" />}
+                  {mood === "sad" && <Frown className="mood-selected-icon sad" />}
                 </div>
                 <Textarea
                   placeholder="Want to share more about your day? (optional)"
@@ -80,7 +80,7 @@ const Dashboard = () => {
                   onChange={(e) => setCheckInText(e.target.value)}
                   className="resize-none"
                 />
-                <div className="flex justify-end gap-2">
+                <div className="check-in-actions">
                   <Button variant="outline" onClick={() => setMood(null)}>Change</Button>
                   <Button>Submit</Button>
                 </div>
@@ -96,29 +96,29 @@ const Dashboard = () => {
             <CardDescription>Your main goals for today</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div className="rounded-lg border p-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-synergy-ongoing"></div>
-                    <span className="font-medium">Complete project proposal</span>
+            <div className="task-list">
+              <div className="task-item">
+                <div className="task-header">
+                  <div className="task-name">
+                    <div className="task-status-dot status-ongoing"></div>
+                    <span>Complete project proposal</span>
                   </div>
-                  <Badge className="bg-synergy-ongoing">High</Badge>
+                  <Badge className="task-priority priority-high">High</Badge>
                 </div>
-                <div className="mt-2 text-sm text-gray-500">
+                <div className="task-due">
                   Due in 3 hours
                 </div>
               </div>
               
-              <div className="rounded-lg border p-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-synergy-warning"></div>
-                    <span className="font-medium">Team retrospective meeting</span>
+              <div className="task-item">
+                <div className="task-header">
+                  <div className="task-name">
+                    <div className="task-status-dot status-warning"></div>
+                    <span>Team retrospective meeting</span>
                   </div>
-                  <Badge className="bg-synergy-warning">Medium</Badge>
+                  <Badge className="task-priority priority-medium">Medium</Badge>
                 </div>
-                <div className="mt-2 text-sm text-gray-500">
+                <div className="task-due">
                   2:00 PM - 3:00 PM
                 </div>
               </div>
@@ -137,21 +137,21 @@ const Dashboard = () => {
           <CardTitle>Quick Shortcuts</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <Button variant="outline" className="h-24 flex-col gap-2">
-              <Target className="h-6 w-6" />
+          <div className="shortcuts-grid">
+            <Button variant="outline" className="shortcut-button">
+              <Target className="shortcut-icon" />
               <span>My Goals</span>
             </Button>
-            <Button variant="outline" className="h-24 flex-col gap-2">
-              <Calendar className="h-6 w-6" />
+            <Button variant="outline" className="shortcut-button">
+              <Calendar className="shortcut-icon" />
               <span>Calendar</span>
             </Button>
-            <Button variant="outline" className="h-24 flex-col gap-2">
-              <Users className="h-6 w-6" />
+            <Button variant="outline" className="shortcut-button">
+              <Users className="shortcut-icon" />
               <span>Team</span>
             </Button>
-            <Button variant="outline" className="h-24 flex-col gap-2">
-              <Clock className="h-6 w-6" />
+            <Button variant="outline" className="shortcut-button">
+              <Clock className="shortcut-icon" />
               <span>Recent</span>
             </Button>
           </div>
@@ -165,21 +165,21 @@ const Dashboard = () => {
           <CardDescription>Today's team mood</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-green-500">60%</div>
-              <Smile className="mt-2 h-8 w-8 text-green-500" />
-              <div className="mt-1 text-sm text-gray-500">Happy</div>
+          <div className="team-pulse-stats">
+            <div className="team-mood-stat">
+              <div className="team-mood-percentage">60%</div>
+              <Smile className="team-mood-icon happy" />
+              <div className="team-mood-label">Happy</div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-yellow-500">30%</div>
-              <Meh className="mt-2 h-8 w-8 text-yellow-500" />
-              <div className="mt-1 text-sm text-gray-500">Neutral</div>
+            <div className="team-mood-stat">
+              <div className="team-mood-percentage">30%</div>
+              <Meh className="team-mood-icon neutral" />
+              <div className="team-mood-label">Neutral</div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-red-500">10%</div>
-              <Frown className="mt-2 h-8 w-8 text-red-500" />
-              <div className="mt-1 text-sm text-gray-500">Sad</div>
+            <div className="team-mood-stat">
+              <div className="team-mood-percentage">10%</div>
+              <Frown className="team-mood-icon sad" />
+              <div className="team-mood-label">Sad</div>
             </div>
           </div>
         </CardContent>

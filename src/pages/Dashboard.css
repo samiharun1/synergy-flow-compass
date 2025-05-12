@@ -1,0 +1,279 @@
+
+/* Dashboard Styles */
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .dashboard-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.dashboard-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.dashboard-date {
+  color: #6b7280;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dashboard-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Check-in Card */
+.mood-options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.mood-button {
+  display: flex;
+  height: 64px;
+  width: 64px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #f3f4f6;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.mood-button:hover {
+  background-color: #e5e7eb;
+}
+
+.mood-button.happy:hover {
+  background-color: #d1fae5;
+}
+
+.mood-button.neutral:hover {
+  background-color: #fef3c7;
+}
+
+.mood-button.sad:hover {
+  background-color: #fee2e2;
+}
+
+.mood-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.mood-icon.happy {
+  color: #10b981;
+}
+
+.mood-icon.neutral {
+  color: #f59e0b;
+}
+
+.mood-icon.sad {
+  color: #ef4444;
+}
+
+.mood-selected {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.mood-selected-icon {
+  height: 48px;
+  width: 48px;
+}
+
+.mood-selected-icon.happy {
+  color: #10b981;
+}
+
+.mood-selected-icon.neutral {
+  color: #f59e0b;
+}
+
+.mood-selected-icon.sad {
+  color: #ef4444;
+}
+
+.anonymous-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.check-in-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Task Focus */
+.task-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.task-priority {
+  display: inline-block;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  color: white;
+}
+
+.priority-high {
+  background-color: #4361EE;
+}
+
+.priority-medium {
+  background-color: #f59e0b;
+}
+
+.task-status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.status-ongoing {
+  background-color: #4361EE;
+}
+
+.status-warning {
+  background-color: #f59e0b;
+}
+
+.task-due {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Shortcuts */
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .shortcuts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.shortcut-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.shortcut-button:hover {
+  background-color: #f9fafb;
+}
+
+.shortcut-icon {
+  height: 24px;
+  width: 24px;
+}
+
+/* Team Pulse */
+.team-pulse-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-mood-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-mood-percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.team-mood-icon {
+  margin-top: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.team-mood-icon.happy {
+  color: #10b981;
+}
+
+.team-mood-icon.neutral {
+  color: #f59e0b;
+}
+
+.team-mood-icon.sad {
+  color: #ef4444;
+}
+
+.team-mood-label {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
