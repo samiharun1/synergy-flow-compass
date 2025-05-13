@@ -29,7 +29,7 @@ const Dashboard = () => {
           <p className="dashboard-date">{formattedDate}</p>
         </div>
         <div className="dashboard-actions">
-          <Button className="bg-synergy-primary">Add Task</Button>
+          <Button>Add Task</Button>
         </div>
       </div>
 
