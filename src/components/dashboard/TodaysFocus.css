@@ -1,0 +1,54 @@
+
+/* Task Focus */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 12px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.priority-high {
+  background-color: #4361EE;
+}
+
+.priority-medium {
+  background-color: #f59e0b;
+}
+
+.task-status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.status-ongoing {
+  background-color: #4361EE;
+}
+
+.status-warning {
+  background-color: #f59e0b;
+}
+
+.task-due {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}

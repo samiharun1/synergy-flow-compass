@@ -1,0 +1,30 @@
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .dashboard-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.dashboard-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.dashboard-date {
+  color: #6b7280;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 8px;
+}
