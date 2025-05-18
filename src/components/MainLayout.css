@@ -1,0 +1,25 @@
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f9fafc;
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main.sidebar-open {
+  margin-left: 16rem;
+}
+
+.main.sidebar-closed {
+  margin-left: 5rem;
+}
+
+.content {
+  padding: 1.5rem;
+  height: calc(100% - 4rem);
+}
