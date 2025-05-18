@@ -6,14 +6,15 @@ import ProfileSettings from "@/components/settings/ProfileSettings";
 import AppearanceSettings from "@/components/settings/AppearanceSettings";
 import NotificationSettings from "@/components/settings/NotificationSettings";
 import AccountSettings from "@/components/settings/AccountSettings";
+import "./Settings.css";
 
 const Settings = () => {
   return (
-    <div className="space-y-6">
+    <div className="settings-container">
       <SettingsHeader />
       
-      <Tabs defaultValue="profile">
-        <TabsList className="mb-4">
+      <Tabs defaultValue="profile" className="settings-tabs">
+        <TabsList className="settings-tabs-list">
           <TabsTrigger value="profile">Profile</TabsTrigger>
           <TabsTrigger value="appearance">Appearance</TabsTrigger>
           <TabsTrigger value="notifications">Notifications</TabsTrigger>

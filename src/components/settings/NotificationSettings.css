@@ -1,0 +1,42 @@
+
+.notification-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.notification-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.notification-option-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification-option-icon {
+  height: 20px;
+  width: 20px;
+  color: #6b7280;
+}
+
+.notification-time-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notification-actions {
+  display: flex;
+  justify-content: flex-end;
+}

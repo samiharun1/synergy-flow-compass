@@ -1,16 +1,17 @@
 
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import "./SettingsHeader.css";
 
 const SettingsHeader = () => {
   return (
-    <div className="flex items-center justify-between">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
-        <p className="text-gray-500">Customize your experience</p>
+    <div className="settings-header">
+      <div className="settings-header-title">
+        <h1 className="settings-title">Settings</h1>
+        <p className="settings-subtitle">Customize your experience</p>
       </div>
-      <Button variant="outline" className="gap-2 text-red-500 hover:bg-red-50 hover:text-red-600">
-        <LogOut className="h-4 w-4" />
+      <Button variant="outline" className="settings-logout-button">
+        <LogOut className="settings-logout-icon" />
         Logout
       </Button>
     </div>

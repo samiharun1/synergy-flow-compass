@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bell } from "lucide-react";
+import "./NotificationSettings.css";
 
 const NotificationSettings = () => {
   const [notificationSettings, setNotificationSettings] = useState({
@@ -18,14 +19,14 @@ const NotificationSettings = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Notification Settings</CardTitle>
-        <CardDescription>Manage your notification preferences</CardDescription>
+        <CardTitle className="notification-card-title">Notification Settings</CardTitle>
+        <CardDescription className="notification-card-description">Manage your notification preferences</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="space-y-4">
-          <div className="flex items-center justify-between space-x-2">
-            <Label htmlFor="emailNotifications" className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-gray-500" />
+      <CardContent className="notification-card-content">
+        <div className="notification-options">
+          <div className="notification-option">
+            <Label htmlFor="emailNotifications" className="notification-option-label">
+              <Bell className="notification-option-icon" />
               <span>Email Notifications</span>
             </Label>
             <Switch
@@ -37,9 +38,9 @@ const NotificationSettings = () => {
             />
           </div>
           
-          <div className="flex items-center justify-between space-x-2">
-            <Label htmlFor="taskReminders" className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-gray-500" />
+          <div className="notification-option">
+            <Label htmlFor="taskReminders" className="notification-option-label">
+              <Bell className="notification-option-icon" />
               <span>Task Reminders</span>
             </Label>
             <Switch
@@ -51,9 +52,9 @@ const NotificationSettings = () => {
             />
           </div>
           
-          <div className="flex items-center justify-between space-x-2">
-            <Label htmlFor="teamUpdates" className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-gray-500" />
+          <div className="notification-option">
+            <Label htmlFor="teamUpdates" className="notification-option-label">
+              <Bell className="notification-option-icon" />
               <span>Team Updates</span>
             </Label>
             <Switch
@@ -65,9 +66,9 @@ const NotificationSettings = () => {
             />
           </div>
           
-          <div className="flex items-center justify-between space-x-2">
-            <Label htmlFor="dailyDigest" className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-gray-500" />
+          <div className="notification-option">
+            <Label htmlFor="dailyDigest" className="notification-option-label">
+              <Bell className="notification-option-icon" />
               <span>Daily Digest</span>
             </Label>
             <Switch
@@ -80,10 +81,10 @@ const NotificationSettings = () => {
           </div>
         </div>
         
-        <div className="space-y-2">
-          <Label htmlFor="notificationTime">Daily Notification Time</Label>
+        <div className="notification-time-group">
+          <Label htmlFor="notificationTime" className="notification-time-label">Daily Notification Time</Label>
           <Select defaultValue="9">
-            <SelectTrigger>
+            <SelectTrigger className="notification-time-select">
               <SelectValue placeholder="Select time" />
             </SelectTrigger>
             <SelectContent>
@@ -96,8 +97,8 @@ const NotificationSettings = () => {
           </Select>
         </div>
         
-        <div className="flex justify-end">
-          <Button>Save Notification Settings</Button>
+        <div className="notification-actions">
+          <Button className="notification-save-button">Save Notification Settings</Button>
         </div>
       </CardContent>
     </Card>

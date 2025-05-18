@@ -6,31 +6,33 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Settings as SettingsIcon } from "lucide-react";
+import "./AccountSettings.css";
 
 const AccountSettings = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Account Settings</CardTitle>
-        <CardDescription>Manage your account</CardDescription>
+        <CardTitle className="account-card-title">Account Settings</CardTitle>
+        <CardDescription className="account-card-description">Manage your account</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="space-y-2">
-          <Label htmlFor="changePassword">Password</Label>
-          <div className="flex items-center gap-2">
+      <CardContent className="account-card-content">
+        <div className="account-password-group">
+          <Label htmlFor="changePassword" className="account-password-label">Password</Label>
+          <div className="account-password-field">
             <Input 
               id="changePassword" 
               type="password" 
               value="••••••••" 
               disabled
+              className="account-password-input"
             />
-            <Button variant="outline">Change</Button>
+            <Button variant="outline" className="account-password-button">Change</Button>
           </div>
         </div>
         
-        <div className="space-y-2">
-          <Label htmlFor="language">Language</Label>
-          <Select defaultValue="en">
+        <div className="account-select-group">
+          <Label htmlFor="language" className="account-select-label">Language</Label>
+          <Select defaultValue="en" className="account-select">
             <SelectTrigger id="language">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
@@ -44,9 +46,9 @@ const AccountSettings = () => {
           </Select>
         </div>
         
-        <div className="space-y-2">
-          <Label htmlFor="timezone">Timezone</Label>
-          <Select defaultValue="utc-8">
+        <div className="account-select-group">
+          <Label htmlFor="timezone" className="account-select-label">Timezone</Label>
+          <Select defaultValue="utc-8" className="account-select">
             <SelectTrigger id="timezone">
               <SelectValue placeholder="Select timezone" />
             </SelectTrigger>
@@ -61,26 +63,26 @@ const AccountSettings = () => {
           </Select>
         </div>
         
-        <div className="rounded-md border p-4">
-          <div className="flex items-center gap-2">
-            <SettingsIcon className="h-5 w-5 text-red-500" />
-            <h3 className="font-medium text-red-500">Danger Zone</h3>
+        <div className="danger-zone">
+          <div className="danger-zone-header">
+            <SettingsIcon className="danger-zone-icon" />
+            <h3 className="danger-zone-title">Danger Zone</h3>
           </div>
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="danger-zone-description">
             Actions here cannot be undone. Be careful.
           </p>
-          <div className="mt-4 flex gap-2">
-            <Button variant="outline" className="text-red-500 hover:bg-red-50">
+          <div className="danger-zone-actions">
+            <Button variant="outline" className="danger-zone-button">
               Reset Account
             </Button>
-            <Button variant="outline" className="text-red-500 hover:bg-red-50">
+            <Button variant="outline" className="danger-zone-button">
               Delete Account
             </Button>
           </div>
         </div>
         
-        <div className="flex justify-end">
-          <Button>Save Account Settings</Button>
+        <div className="account-actions">
+          <Button className="account-save-button">Save Account Settings</Button>
         </div>
       </CardContent>
     </Card>

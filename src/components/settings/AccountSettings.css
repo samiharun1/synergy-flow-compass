@@ -1,0 +1,70 @@
+
+.account-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.account-password-group,
+.account-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-password-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.danger-zone {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 16px;
+}
+
+.danger-zone-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.danger-zone-icon {
+  height: 20px;
+  width: 20px;
+  color: #ef4444;
+}
+
+.danger-zone-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ef4444;
+  margin: 0;
+}
+
+.danger-zone-description {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.danger-zone-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.danger-zone-button {
+  color: #ef4444;
+}
+
+.danger-zone-button:hover {
+  background-color: #fef2f2;
+}
+
+.account-actions {
+  display: flex;
+  justify-content: flex-end;
+}
