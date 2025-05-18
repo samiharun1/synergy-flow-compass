@@ -32,35 +32,39 @@ const AccountSettings = () => {
         
         <div className="account-select-group">
           <Label htmlFor="language" className="account-select-label">Language</Label>
-          <Select defaultValue="en" className="account-select">
-            <SelectTrigger id="language">
-              <SelectValue placeholder="Select language" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="en">English (US)</SelectItem>
-              <SelectItem value="es">Spanish</SelectItem>
-              <SelectItem value="fr">French</SelectItem>
-              <SelectItem value="de">German</SelectItem>
-              <SelectItem value="ja">Japanese</SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="account-select-wrapper">
+            <Select defaultValue="en">
+              <SelectTrigger id="language">
+                <SelectValue placeholder="Select language" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">English (US)</SelectItem>
+                <SelectItem value="es">Spanish</SelectItem>
+                <SelectItem value="fr">French</SelectItem>
+                <SelectItem value="de">German</SelectItem>
+                <SelectItem value="ja">Japanese</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         
         <div className="account-select-group">
           <Label htmlFor="timezone" className="account-select-label">Timezone</Label>
-          <Select defaultValue="utc-8" className="account-select">
-            <SelectTrigger id="timezone">
-              <SelectValue placeholder="Select timezone" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="utc-8">Pacific Time (UTC-8)</SelectItem>
-              <SelectItem value="utc-7">Mountain Time (UTC-7)</SelectItem>
-              <SelectItem value="utc-6">Central Time (UTC-6)</SelectItem>
-              <SelectItem value="utc-5">Eastern Time (UTC-5)</SelectItem>
-              <SelectItem value="utc-0">Greenwich Mean Time (UTC+0)</SelectItem>
-              <SelectItem value="utc+1">Central European Time (UTC+1)</SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="account-select-wrapper">
+            <Select defaultValue="utc-8">
+              <SelectTrigger id="timezone">
+                <SelectValue placeholder="Select timezone" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="utc-8">Pacific Time (UTC-8)</SelectItem>
+                <SelectItem value="utc-7">Mountain Time (UTC-7)</SelectItem>
+                <SelectItem value="utc-6">Central Time (UTC-6)</SelectItem>
+                <SelectItem value="utc-5">Eastern Time (UTC-5)</SelectItem>
+                <SelectItem value="utc-0">Greenwich Mean Time (UTC+0)</SelectItem>
+                <SelectItem value="utc+1">Central European Time (UTC+1)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         
         <div className="danger-zone">
