@@ -10,8 +10,8 @@ import "./AccountSettings.css";
 
 const AccountSettings = () => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className="account-card">
+      <CardHeader className="account-card-header">
         <CardTitle className="account-card-title">Account Settings</CardTitle>
         <CardDescription className="account-card-description">Manage your account</CardDescription>
       </CardHeader>

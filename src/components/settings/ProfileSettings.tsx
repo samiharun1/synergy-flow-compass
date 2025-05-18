@@ -9,8 +9,8 @@ import "./ProfileSettings.css";
 
 const ProfileSettings = () => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className="profile-card">
+      <CardHeader className="profile-card-header">
         <CardTitle className="profile-card-title">Profile Information</CardTitle>
         <CardDescription className="profile-card-description">Update your personal details</CardDescription>
       </CardHeader>

@@ -17,8 +17,8 @@ const NotificationSettings = () => {
   });
   
   return (
-    <Card>
-      <CardHeader>
+    <Card className="notification-card">
+      <CardHeader className="notification-card-header">
         <CardTitle className="notification-card-title">Notification Settings</CardTitle>
         <CardDescription className="notification-card-description">Manage your notification preferences</CardDescription>
       </CardHeader>

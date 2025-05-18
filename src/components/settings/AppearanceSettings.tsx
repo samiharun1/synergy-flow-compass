@@ -10,8 +10,8 @@ const AppearanceSettings = () => {
   const [goalsView, setGoalsView] = useState("list");
   
   return (
-    <Card>
-      <CardHeader>
+    <Card className="appearance-card">
+      <CardHeader className="appearance-card-header">
         <CardTitle className="appearance-card-title">Appearance Settings</CardTitle>
         <CardDescription className="appearance-card-description">Customize the look and feel</CardDescription>
       </CardHeader>
