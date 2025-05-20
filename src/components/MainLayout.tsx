@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import Sidebar from "./sidebar/Sidebar";
+import CustomSidebar from "./sidebar/CustomSidebar";
 import Header from "./header/Header";
 import "./MainLayout.css";
 
@@ -13,7 +13,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="layout">
-      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <CustomSidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       
       <main className={`main ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
